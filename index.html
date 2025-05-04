@@ -93,14 +93,14 @@
       margin-bottom: 1rem;
       animation: popIn 0.5s ease both;
     }
-    .search-box input, .search-box button {
+    .search-box input, .search-box button, .search-box select {
       padding: .75rem 1rem;
       border: 2px solid var(--color-primary);
       border-radius: .5rem;
       font-size: 1rem;
       transition: border-color var(--transition-speed), transform var(--transition-speed);
     }
-    .search-box input:focus {
+    .search-box input:focus, .search-box select:focus {
       outline: none;
       border-color: var(--color-accent);
       transform: scale(1.02);
@@ -129,6 +129,53 @@
       margin-bottom: .25rem;
     }
 
+    /* Sponsors Section */
+    .sponsors {
+      padding: 2rem;
+      text-align: center;
+      background: var(--color-card);
+      margin-top: 2rem;
+      border-top: 1px solid #eee;
+    }
+    .sponsors h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-primary);
+      animation: glow 2s infinite alternate;
+    }
+    .sponsor-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .sponsor {
+      flex: 1 1 200px;
+      max-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: popIn 0.6s ease both;
+    }
+    .sponsor .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    .sponsor .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .sponsor p {
+      font-size: 1rem;
+      color: var(--color-text);
+      margin-top: 0.5rem;
+    }
+
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -152,6 +199,7 @@
       body { padding: 1rem; }
       header h1 { font-size: 1.5rem; }
       .search-box { flex-direction: column; }
+      .sponsor-list { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -173,9 +221,7 @@
         <input id="wordInput" type="text" placeholder="Enter a word..." />
         <button onclick="lookupDefinition()">Search</button>
       </div>
-      <div id="definitionResult" class="result">
-        <!-- definitions will be injected here -->
-      </div>
+      <div id="definitionResult" class="result"></div>
     </section>
 
     <!-- Translation Section -->
@@ -186,12 +232,28 @@
           <option value="es">Spanish</option>
           <option value="fr">French</option>
           <option value="de">German</option>
-          <!-- add more languages -->
         </select>
         <button onclick="translateText()">Translate</button>
       </div>
-      <div id="translationResult" class="result">
-        <!-- translation will be injected here -->
+      <div id="translationResult" class="result"></div>
+    </section>
+
+    <!-- Brought to you by Section -->
+    <section class="sponsors">
+      <h3>Brought to you by:</h3>
+      <div class="sponsor-list">
+        <div class="sponsor">
+          <div class="avatar"><img src="https://via.placeholder.com/150" alt="Orhan"></div>
+          <p>Orhan</p>
+        </div>
+        <div class="sponsor">
+          <div class="avatar"><img src="https://via.placeholder.com/150" alt="Cemal"></div>
+          <p>Cemal</p>
+        </div>
+        <div class="sponsor">
+          <div class="avatar"><img src="https://via.placeholder.com/150" alt="Unknownrandomuser"></div>
+          <p>Unknownrandomuser</p>
+        </div>
       </div>
     </section>
   </div>
@@ -214,9 +276,6 @@
       const resultDiv = document.getElementById('definitionResult');
       resultDiv.innerHTML = '<p>Loading definition...</p>';
       try {
-        // TODO: fetch from dictionary API
-        // e.g. const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        // const data = await res.json();
         const data = { word, definitions: ['Definition 1', 'Definition 2'] }; // stub
         resultDiv.innerHTML = `<h2>${data.word}</h2>` +
           data.definitions.map(d => `<p>• ${d}</p>`).join('');
@@ -232,9 +291,6 @@
       const resultDiv = document.getElementById('translationResult');
       resultDiv.innerHTML = '<p>Translating...</p>';
       try {
-        // TODO: fetch from translation API
-        // e.g. const res = await fetch(`/translate?text=${encodeURIComponent(text)}&to=${lang}`);
-        // const json = await res.json();
         const json = { translated: text.split('').reverse().join('') }; // stub
         resultDiv.innerHTML = `<p>${json.translated}</p>`;
       } catch (err) {
