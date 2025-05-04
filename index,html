@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fancy Dictionary & Translator</title>
+  
+  <!-- Theme Variables -->
+  <style>
+    :root {
+      --color-bg: #f5f7fa;
+      --color-card: #ffffff;
+      --color-primary: #4a90e2;
+      --color-secondary: #50e3c2;
+      --color-text: #333333;
+      --color-accent: #e94e77;
+      --transition-speed: 0.3s;
+      --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+
+  <!-- Main CSS (~50% of code) -->
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background: var(--color-card);
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    header {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+      animation: glow 2s infinite alternate;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      background: var(--color-secondary);
+    }
+    .tab {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: background var(--transition-speed);
+    }
+    .tab:hover, .tab.active {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    /* Content Sections */
+    .section {
+      display: none;
+      padding: 2rem;
+      animation: fadeIn 0.5s ease-out;
+    }
+    .section.active {
+      display: block;
+    }
+
+    /* Forms */
+    .search-box {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1rem;
+      animation: popIn 0.5s ease both;
+    }
+    .search-box input, .search-box button {
+      padding: .75rem 1rem;
+      border: 2px solid var(--color-primary);
+      border-radius: .5rem;
+      font-size: 1rem;
+      transition: border-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      transform: scale(1.02);
+    }
+    .search-box button {
+      background: var(--color-primary);
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-box button:hover {
+      background: var(--color-accent);
+    }
+
+    /* Result Card */
+    .result {
+      background: var(--color-bg);
+      border-left: 5px solid var(--color-primary);
+      padding: 1rem;
+      border-radius: .5rem;
+      animation: popIn 0.7s ease both;
+    }
+    .result h2 {
+      margin-bottom: .5rem;
+    }
+    .result p {
+      margin-bottom: .25rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes popIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px var(--color-secondary); }
+      to { text-shadow: 0 0 20px var(--color-accent); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      header h1 { font-size: 1.5rem; }
+      .search-box { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Dictionary & Translator</h1>
+    </header>
+
+    <div class="tabs">
+      <div class="tab active" data-target="dict">Search Definition</div>
+      <div class="tab" data-target="trans">Translate</div>
+    </div>
+
+    <!-- Definition Section -->
+    <section id="dict" class="section active">
+      <div class="search-box">
+        <input id="wordInput" type="text" placeholder="Enter a word..." />
+        <button onclick="lookupDefinition()">Search</button>
+      </div>
+      <div id="definitionResult" class="result">
+        <!-- definitions will be injected here -->
+      </div>
+    </section>
+
+    <!-- Translation Section -->
+    <section id="trans" class="section">
+      <div class="search-box">
+        <input id="textInput" type="text" placeholder="Enter text to translate..." />
+        <select id="langSelect">
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <!-- add more languages -->
+        </select>
+        <button onclick="translateText()">Translate</button>
+      </div>
+      <div id="translationResult" class="result">
+        <!-- translation will be injected here -->
+      </div>
+    </section>
+  </div>
+
+  <!-- JS Framework -->
+  <script>
+    // Tab switching logic
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+
+    // Placeholder: lookup definition
+    async function lookupDefinition() {
+      const word = document.getElementById('wordInput').value.trim();
+      const resultDiv = document.getElementById('definitionResult');
+      resultDiv.innerHTML = '<p>Loading definition...</p>';
+      try {
+        // TODO: fetch from dictionary API
+        // e.g. const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+        // const data = await res.json();
+        const data = { word, definitions: ['Definition 1', 'Definition 2'] }; // stub
+        resultDiv.innerHTML = `<h2>${data.word}</h2>` +
+          data.definitions.map(d => `<p>• ${d}</p>`).join('');
+      } catch (err) {
+        resultDiv.innerHTML = `<p>Error fetching definition.</p>`;
+      }
+    }
+
+    // Placeholder: translate text
+    async function translateText() {
+      const text = document.getElementById('textInput').value.trim();
+      const lang = document.getElementById('langSelect').value;
+      const resultDiv = document.getElementById('translationResult');
+      resultDiv.innerHTML = '<p>Translating...</p>';
+      try {
+        // TODO: fetch from translation API
+        // e.g. const res = await fetch(`/translate?text=${encodeURIComponent(text)}&to=${lang}`);
+        // const json = await res.json();
+        const json = { translated: text.split('').reverse().join('') }; // stub
+        resultDiv.innerHTML = `<p>${json.translated}</p>`;
+      } catch (err) {
+        resultDiv.innerHTML = `<p>Error translating text.</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
