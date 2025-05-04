@@ -1,0 +1,386 @@
+{
+  "apple": [
+    "A fruit that grows on trees.",
+    "A tech company based in Cupertino."
+  ],
+  "book": [
+    "A set of written pages.",
+    "To arrange for someone to have a seat or room."
+  ],
+  "run": [
+    "To move quickly on foot.",
+    "To operate or function."
+  ],
+  "bat": [
+    "A nocturnal flying mammal.",
+    "A piece of sports equipment used to hit a ball."
+  ],
+  "can": [
+    "A metal container for food or drink.",
+    "To be able to."
+  ],
+  "current": [
+    "A flow of water or air.",
+    "Happening or existing now."
+  ],
+  "date": [
+    "A specific day of the year.",
+    "A romantic appointment."
+  ],
+  "duck": [
+    "A water bird.",
+    "To lower the head quickly to avoid something."
+  ],
+  "file": [
+    "A collection of documents.",
+    "To smooth or shape something with a tool."
+  ],
+  "light": [
+    "The natural agent that makes things visible.",
+    "Not heavy."
+  ],
+  "match": [
+    "A contest between opponents.",
+    "A stick that produces fire."
+  ],
+  "note": [
+    "A short written message.",
+    "A musical sound."
+  ],
+  "paper": [
+    "A material used for writing.",
+    "A scholarly publication."
+  ],
+  "plate": [
+    "A flat dish used for serving food.",
+    "A large flat surface."
+  ],
+  "run": [
+    "To move quickly on foot.",
+    "To operate or function."
+  ],
+  "star": [
+    "A luminous point in the night sky.",
+    "A famous person."
+  ],
+  "store": [
+    "A place to buy goods.",
+    "To keep something for future use."
+  ],
+  "table": [
+    "A piece of furniture with a flat surface.",
+    "A systematic list of data."
+  ],
+  "train": [
+    "A mode of transport consisting of connected vehicles.",
+    "To teach or coach someone."
+  ],
+  "water": [
+    "A transparent, tasteless liquid essential for life.",
+    "To give a plant the moisture it needs."
+  ],
+  "wall": [
+    "A vertical structure that defines a space.",
+    "To cover or close off with a barrier."
+  ],
+  "wind": [
+    "The movement of air.",
+    "To twist or turn something."
+  ],
+  "box": [
+    "A container with sides, a top, and a bottom.",
+    "To fight using fists."
+  ],
+  "brush": [
+    "A tool with bristles used for cleaning.",
+    "To lightly touch something."
+  ],
+  "camera": [
+    "A device for taking photographs.",
+    "A group of actors or crew in a film set."
+  ],
+  "circle": [
+    "A round shape.",
+    "A group of people with shared interests."
+  ],
+  "class": [
+    "A group of students learning together.",
+    "A social rank or category."
+  ],
+  "cloud": [
+    "A visible mass of condensed water vapor in the sky.",
+    "A remote server used for data storage."
+  ],
+  "course": [
+    "A path or route.",
+    "A series of lessons or lectures."
+  ],
+  "cup": [
+    "A small container used for drinking.",
+    "A trophy awarded in sports."
+  ],
+  "dog": [
+    "A domesticated carnivorous mammal.",
+    "To follow someone persistently."
+  ],
+  "draw": [
+    "To make a picture using a pen or pencil.",
+    "To pull or drag something."
+  ],
+  "ear": [
+    "The organ used to hear.",
+    "A part of a plant or grain."
+  ],
+  "edge": [
+    "The boundary or limit of something.",
+    "A sharp side of an object."
+  ],
+  "elephant": [
+    "A large mammal with a trunk.",
+    "A metaphor for something very large."
+  ],
+  "eye": [
+    "The organ used for vision.",
+    "A part of a needle."
+  ],
+  "face": [
+    "The front part of the head with eyes, nose, and mouth.",
+    "To confront or meet something directly."
+  ],
+  "finger": [
+    "A digit on the hand.",
+    "To point at or identify."
+  ],
+  "flower": [
+    "The reproductive structure of a plant.",
+    "To bloom or flourish."
+  ],
+  "football": [
+    "A sport played with a ball kicked into a goal.",
+    "A round ball used in the sport."
+  ],
+  "glass": [
+    "A transparent material used for windows.",
+    "A drinking vessel."
+  ],
+  "ground": [
+    "The surface of the earth.",
+    "To establish a foundation or basis."
+  ],
+  "hair": [
+    "A threadlike strand growing from the skin.",
+    "To style or cut the hair."
+  ],
+  "heart": [
+    "The organ that pumps blood in the body.",
+    "A symbol of love or affection."
+  ],
+  "hill": [
+    "A raised area of land.",
+    "To move upward."
+  ],
+  "honey": [
+    "A sweet substance produced by bees.",
+    "A term of endearment."
+  ],
+  "house": [
+    "A building for people to live in.",
+    "A family or group of people living together."
+  ],
+  "ice": [
+    "Frozen water.",
+    "A cold substance used to cool drinks."
+  ],
+  "island": [
+    "A piece of land surrounded by water.",
+    "A remote or isolated area."
+  ],
+  "key": [
+    "A tool used to open a lock.",
+    "An important or essential element."
+  ],
+  "king": [
+    "A male ruler of a country.",
+    "A playing card with the highest rank."
+  ],
+  "knife": [
+    "A tool with a sharp blade used for cutting.",
+    "A utensil used in eating."
+  ],
+  "lamp": [
+    "A device that produces light.",
+    "A decorative object."
+  ],
+  "leaf": [
+    "A flat green part of a plant.",
+    "A sheet of paper in a book."
+  ],
+  "light": [
+    "The natural agent that makes things visible.",
+    "Not heavy."
+  ],
+  "line": [
+    "A long, thin mark.",
+    "A row of people or things."
+  ],
+  "lion": [
+    "A large, carnivorous feline.",
+    "A symbol of bravery or strength."
+  ],
+  "map": [
+    "A representation of an area.",
+    "A detailed plan or chart."
+  ],
+  "moon": [
+    "A natural satellite of the earth.",
+    "A phase of the moon cycle."
+  ],
+  "mountain": [
+    "A large landform that rises above the surrounding land.",
+    "A difficult challenge."
+  ],
+  "music": [
+    "A form of art using sound.",
+    "A series of tones arranged in a rhythm."
+  ],
+  "neck": [
+    "The part of the body connecting the head to the torso.",
+    "A narrow part of something."
+  ],
+  "night": [
+    "The time between sunset and sunrise.",
+    "A period of darkness."
+  ],
+  "nose": [
+    "The organ used for smelling.",
+    "The front part of a face."
+  ],
+  "orange": [
+    "A citrus fruit.",
+    "A color between red and yellow."
+  ],
+  "oven": [
+    "A kitchen appliance used for baking.",
+    "A space used for heating or cooking."
+  ],
+  "paper": [
+    "A material used for writing.",
+    "A scholarly publication."
+  ],
+  "phone": [
+    "A device used for voice communication.",
+    "A mobile or cellular device."
+  ],
+  "picture": [
+    "A visual representation of something.",
+    "To describe or depict something."
+  ],
+  "plane": [
+    "An aircraft that flies.",
+    "A flat, level surface."
+  ],
+  "plant": [
+    "A living organism that grows in the ground.",
+    "A place where manufacturing occurs."
+  ],
+  "pocket": [
+    "A small pouch sewn into clothing.",
+    "A place to store something."
+  ],
+  "rabbit": [
+    "A small mammal known for its long ears.",
+    "A fast-moving, secretive animal."
+  ],
+  "rain": [
+    "Water falling from the sky.",
+    "To fall as drops of water."
+  ],
+  "river": [
+    "A large flowing body of water.",
+    "To guide or direct something."
+  ],
+  "rock": [
+    "A solid mineral material.",
+    "A popular genre of music."
+  ],
+  "room": [
+    "A space in a building.",
+    "To have enough space."
+  ],
+  "run": [
+    "To move quickly on foot.",
+    "To operate or function."
+  ],
+  "sand": [
+    "Fine particles of rock.",
+    "To smooth or polish something."
+  ],
+  "sea": [
+    "A large body of saltwater.",
+    "A vast expanse of something."
+  ],
+  "ship": [
+    "A large vessel used for travel on water.",
+    "To send or deliver something."
+  ],
+  "sky": [
+    "The space above the earth.",
+    "A color of light blue."
+  ],
+  "snow": [
+    "Frozen precipitation that falls as flakes.",
+    "To cover with snow."
+  ],
+  "sock": [
+    "A piece of clothing worn on the foot.",
+    "To strike forcefully."
+  ],
+  "star": [
+    "A luminous point in the night sky.",
+    "A famous person."
+  ],
+  "stone": [
+    "A hard, solid nonmetallic mineral.",
+    "A small piece of rock."
+  ],
+  "street": [
+    "A paved roadway in a city.",
+    "A public place."
+  ],
+  "sun": [
+    "The star at the center of our solar system.",
+    "A source of light and heat."
+  ],
+  "table": [
+    "A piece of furniture with a flat surface.",
+    "A systematic list of data."
+  ],
+  "tea": [
+    "A hot beverage made from tea leaves.",
+    "A meal served in the afternoon."
+  ],
+  "tree": [
+    "A perennial plant with a trunk.",
+    "A family tree of ancestors."
+  ],
+  "umbrella": [
+    "A device used to protect from rain.",
+    "A cover or protection."
+  ],
+  "water": [
+    "A clear, colorless liquid essential for life.",
+    "To irrigate or hydrate."
+  ],
+  "window": [
+    "An opening in a wall for ventilation or viewing.",
+    "A computer graphical interface element."
+  ],
+  "wolf": [
+    "A wild carnivorous mammal related to dogs.",
+    "A symbol of strength and hunting."
+  ],
+  "zebra": [
+    "A black-and-white striped mammal.",
+    "A type of crossing for pedestrians."
+  ]
+}
