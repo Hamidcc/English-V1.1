@@ -274,33 +274,42 @@
       });
     });
 
-    // Placeholder: lookup definition
-    async function lookupDefinition() {
-      const word = document.getElementById('wordInput').value.trim();
-      const resultDiv = document.getElementById('definitionResult');
-      resultDiv.innerHTML = '<p>Loading definition...</p>';
-      try {
-        const data = { word, definitions: ['Definition 1', 'Definition 2'] }; // stub
-        resultDiv.innerHTML = `<h2>${data.word}</h2>` +
-          data.definitions.map(d => `<p>• ${d}</p>`).join('');
-      } catch (err) {
-        resultDiv.innerHTML = `<p>Error fetching definition.</p>`;
-      }
+async function lookupDefinition() {
+  const word = document.getElementById('wordInput').value.trim().toLowerCase();
+  const resultDiv = document.getElementById('definitionResult');
+  resultDiv.innerHTML = '<p>Loading definition...</p>';
+  try {
+    const res = await fetch('definitions.json');
+    const defs = await res.json();
+    if (defs[word]) {
+      resultDiv.innerHTML = `<h2>${word}</h2>` +
+        defs[word].slice(0, 2).map(d => `<p>• ${d}</p>`).join('');
+    } else {
+      resultDiv.innerHTML = `<p>No definitions found for "${word}".</p>`;
     }
+  } catch (err) {
+    resultDiv.innerHTML = `<p>Error fetching definition.</p>`;
+  }
+}
 
-    // Placeholder: translate text
-    async function translateText() {
-      const text = document.getElementById('textInput').value.trim();
-      const lang = document.getElementById('langSelect').value;
-      const resultDiv = document.getElementById('translationResult');
-      resultDiv.innerHTML = '<p>Translating...</p>';
-      try {
-        const json = { translated: text.split('').reverse().join('') }; // stub
-        resultDiv.innerHTML = `<p>${json.translated}</p>`;
-      } catch (err) {
-        resultDiv.innerHTML = `<p>Error translating text.</p>`;
-      }
-    }
+async function translateText() {
+  const text = document.getElementById('textInput').value.trim().toLowerCase();
+  const lang = document.getElementById('langSelect').value;
+  const resultDiv = document.getElementById('translationResult');
+  resultDiv.innerHTML = '<p>Translating...</p>';
+  try {
+    const res = await fetch('translations.json');
+    const translations = await res.json();
+
+    const translatedWords = text.split(' ').map(word =>
+      translations[word]?.[lang] || word
+    );
+    resultDiv.innerHTML = `<p>${translatedWords.join(' ')}</p>`;
+  } catch (err) {
+    resultDiv.innerHTML = `<p>Error translating text.</p>`;
+  }
+}
+
   </script>
 </body>
 </html>
